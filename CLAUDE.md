@@ -48,7 +48,7 @@ lib/                # Utilities and helpers
 ## Development Commands
 
 ```bash
-npm run dev      # Start development server (http://localhost:3000)
+npm run dev      # Start development server (http://counterspell.localhost:3000)
 npm run build    # Production build
 npm run start    # Start production server
 npm run lint     # Run ESLint
