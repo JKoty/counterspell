@@ -9,13 +9,13 @@
   --accent-light: #8b6cb8;
   --gold: #c9a227;
   --border: #2d2d44;
+  --font-cinzel: 'Cinzel', serif; /* fallback, overridden by Next.js font loader */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-cinzel), serif;
-  --font-mono: var(--font-geist-mono);
 }
 
 body {
