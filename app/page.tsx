@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-8">
@@ -12,6 +14,12 @@ export default function Home() {
         <p className="mt-2 text-center text-sm italic text-[#6b6b80]">
           &ldquo;The trouble with having an open mind is that people will insist on coming along and trying to put things in it.&rdquo;
         </p>
+        <Link
+          href="/game"
+          className="relative mt-6 block rounded border-2 border-[#6b4c9a] bg-gradient-to-b from-[#6b4c9a] to-[#4a3570] px-8 py-3 text-center font-[family-name:var(--font-cinzel)] text-lg text-[#eaeaea] shadow-lg transition-all hover:from-[#7a5ca8] hover:to-[#5a4580]"
+        >
+          Enter the University
+        </Link>
       </div>
     </div>
   );

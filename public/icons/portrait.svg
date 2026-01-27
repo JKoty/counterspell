@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background -->
+  <rect x="2" y="2" width="60" height="60" rx="6" fill="#2a2a40" stroke="#3d3d5c" stroke-width="2"/>
+
+  <!-- Big round face -->
+  <ellipse cx="32" cy="36" rx="22" ry="24" fill="#d4c4a8" stroke="#b8a88a" stroke-width="2"/>
+
+  <!-- Ears sticking out -->
+  <ellipse cx="9" cy="36" rx="5" ry="8" fill="#d4c4a8" stroke="#b8a88a" stroke-width="1"/>
+  <ellipse cx="55" cy="36" rx="5" ry="8" fill="#d4c4a8" stroke="#b8a88a" stroke-width="1"/>
+
+  <!-- Messy hair -->
+  <path d="M12 28 Q14 18 20 20 Q18 12 28 14 Q30 6 36 14 Q44 10 46 20 Q52 16 52 28" fill="#5a3a1a" stroke="#3a2a10" stroke-width="1"/>
+  <path d="M16 24 Q20 20 24 24" fill="#5a3a1a" stroke="none"/>
+  <path d="M40 22 Q46 18 50 26" fill="#5a3a1a" stroke="none"/>
+
+  <!-- Big googly eyes -->
+  <ellipse cx="24" cy="34" rx="8" ry="9" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
+  <ellipse cx="42" cy="34" rx="8" ry="9" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Pupils looking slightly crossed -->
+  <circle cx="26" cy="35" r="4" fill="#1a1a2e"/>
+  <circle cx="40" cy="35" r="4" fill="#1a1a2e"/>
+  <circle cx="27" cy="34" r="1.5" fill="#fff"/>
+  <circle cx="41" cy="34" r="1.5" fill="#fff"/>
+
+  <!-- Thick eyebrows raised -->
+  <path d="M16 24 Q24 20 32 26" fill="none" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M34 26 Q42 20 50 24" fill="none" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Big nose -->
+  <ellipse cx="32" cy="44" rx="4" ry="5" fill="#c4b498" stroke="#a89878" stroke-width="1"/>
+
+  <!-- Goofy grin -->
+  <path d="M20 52 Q32 62 44 52" fill="none" stroke="#6b4c00" stroke-width="2" stroke-linecap="round"/>
+  <path d="M22 52 Q32 58 42 52" fill="#fff" stroke="none"/>
+
+  <!-- Freckles -->
+  <circle cx="18" cy="42" r="1.5" fill="#b8a078"/>
+  <circle cx="15" cy="46" r="1" fill="#b8a078"/>
+  <circle cx="46" cy="42" r="1.5" fill="#b8a078"/>
+  <circle cx="49" cy="46" r="1" fill="#b8a078"/>
+</svg>

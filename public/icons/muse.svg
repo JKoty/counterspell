@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- Glowing orb -->
+  <circle cx="12" cy="12" r="8" fill="#7b2cbf" stroke="#5a189a" stroke-width="1.5"/>
+  <circle cx="12" cy="12" r="5" fill="#9d4edd" stroke="none"/>
+  <circle cx="12" cy="12" r="2.5" fill="#c77dff" stroke="none"/>
+  <!-- Sparkles -->
+  <circle cx="10" cy="9" r="1" fill="#e0aaff"/>
+  <!-- Orbiting particles -->
+  <circle cx="5" cy="10" r="1.5" fill="#c77dff" stroke="#9d4edd" stroke-width="0.5"/>
+  <circle cx="19" cy="14" r="1.5" fill="#c77dff" stroke="#9d4edd" stroke-width="0.5"/>
+  <circle cx="12" cy="4" r="1" fill="#e0aaff" stroke="#c77dff" stroke-width="0.5"/>
+</svg>

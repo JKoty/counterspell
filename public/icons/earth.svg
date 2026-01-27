@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- Main crystal/rock -->
+  <polygon points="12,2 20,10 16,22 8,22 4,10" fill="#606c38" stroke="#283618" stroke-width="1.5"/>
+  <!-- Facets -->
+  <polygon points="12,2 12,12 4,10" fill="#7c8c4e" stroke="none"/>
+  <polygon points="12,12 8,22 4,10" fill="#4a5a28" stroke="none"/>
+  <polygon points="12,12 16,22 8,22" fill="#505a30" stroke="none"/>
+  <!-- Highlight -->
+  <polygon points="12,4 14,8 12,8" fill="#a4b468" stroke="none"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- Outer flame -->
+  <path d="M12 2 C12 2 6 8 6 14 C6 18 8.5 22 12 22 C15.5 22 18 18 18 14 C18 8 12 2 12 2 Z" fill="#e85d04" stroke="#9d0208" stroke-width="1.5"/>
+  <!-- Inner flame -->
+  <path d="M12 8 C12 8 9 12 9 15 C9 17.5 10.5 19 12 19 C13.5 19 15 17.5 15 15 C15 12 12 8 12 8 Z" fill="#ffba08" stroke="#e85d04" stroke-width="1"/>
+  <!-- Core -->
+  <ellipse cx="12" cy="16" rx="2" ry="2.5" fill="#fff3b0"/>
+</svg>

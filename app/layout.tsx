@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel } from "next/font/google";
 import "./globals.css";
-import TopBar from "@/components/TopBar";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -21,10 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cinzel.variable} antialiased`}>
-        <TopBar />
-        <main className="pt-16">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );

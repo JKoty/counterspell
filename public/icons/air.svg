@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- Wind swirls -->
+  <path d="M3 8 Q8 6 12 8 Q16 10 18 8 Q20 6 21 8" fill="none" stroke="#a8dadc" stroke-width="2" stroke-linecap="round"/>
+  <path d="M5 12 Q9 10 12 12 Q15 14 19 12" fill="none" stroke="#457b9d" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M3 16 Q7 18 11 16 Q15 14 17 16 Q19 18 21 16" fill="none" stroke="#a8dadc" stroke-width="2" stroke-linecap="round"/>
+  <!-- Spiral accent -->
+  <circle cx="19" cy="8" r="2" fill="none" stroke="#1d3557" stroke-width="1.5"/>
+</svg>
