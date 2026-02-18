@@ -30,16 +30,15 @@ lib/                # Utilities and helpers
 
 ### Next.js App Router
 - Use `app/` directory with file-based routing
-- Server Components by default; use `'use client'` only when needed
-- Server Actions for form handling and mutations
-- Route Handlers (`route.ts`) for API endpoints
+- Server Components by default; use `'use client'` for interactive game UI
+- Server Actions for mutations that touch persistent state (e.g. saving game progress)
+- Route Handlers (`route.ts`) for API endpoints (e.g. leaderboard, save sync)
 - Metadata API for SEO (`export const metadata`)
 
 ### React Patterns
-- Prefer Server Components for data fetching
-- Use `useActionState` and `useFormStatus` for forms
-- Use `useOptimistic` for optimistic UI updates
-- Minimize client-side state; use Zustand if needed
+- Server Components for static/initial content; `'use client'` for game UI that changes frequently
+- Use Zustand for client-side game state (resources, current turn, duel state)
+- Server Actions or Route Handlers for server-side persistence; avoid them for ephemeral in-session state
 
 ### TypeScript
 - Strict mode enabled
