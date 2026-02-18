@@ -47,7 +47,8 @@ lib/                # Utilities and helpers
 
 ## Visual Theme
 
-Dark fantasy graphic novel style with Discworld parody spirit.
+Dark fantasy graphic novel style with Discworld parody spirit. Do not use any trademarks or copyrighted material, including but not only names "Discworld" and "Unseen University".
+Any "Unseen University" references should be replaced with "Invisible University".
 
 ### Color Palette
 
@@ -104,44 +105,67 @@ Text-based daily life simulator at a magical university. The Student (player) na
 - **Activity**: What the Student chooses to do during the day
 - **Event**: Random occurrence that evaluates the day's outcome
 - **Duel**: End-of-day magical confrontation with another student
+- **Humours**: Consumable magical energy tokens (Fire, Air, Earth, Muse) spent during Duels
+- **Clout**: Social/political assets (Prestige, Compromising Materials, Contraband, Friendship) earned and spent across all game phases
 
-### Resources
+### Humours
 
-| Resource | Icon    | Purpose                              |
-|----------|---------|--------------------------------------|
-| Fire     | Flame   | Passion, aggression, direct power    |
-| Air      | Wind    | Intellect, speed, evasion            |
-| Earth    | Crystal | Stability, defense, endurance        |
-| Muse     | Orb     | Inspiration, creativity, wild magic  |
+*Consumable magical energy tokens earned through Activities and Events, spent during Duels.*
+
+| Humour | Icon    | Purpose                              |
+|--------|---------|--------------------------------------|
+| Fire   | Flame   | Passion, aggression, direct power    |
+| Air    | Wind    | Intellect, speed, evasion            |
+| Earth  | Crystal | Stability, defense, endurance        |
+| Muse   | Orb     | Inspiration, creativity, wild magic  |
+
+Humours are **not** Duel rewards — they are spent to power spells, not won from opponents.
+
+### Clout (Social Assets)
+
+*Social and political assets earned through Activities, Events, and Duel wins. Can unlock special Event choices and passively influence Event outcomes.*
+
+| Asset                  | Icon   | Earned from                                    | Spent for                                                  |
+|------------------------|--------|------------------------------------------------|------------------------------------------------------------|
+| Prestige               | Star   | Lectures, Duel wins, academic Events           | Authority-based Event choices, auto-passing social checks  |
+| Compromising Materials | Scroll | Scheme & Plot, Illusion duel wins, Events      | Blackmail options in Events, bypassing gatekeepers         |
+| Contraband             | Vial   | Explore Grounds, Fireball duel wins, Events    | Underground solutions in Events (risky if caught)          |
+| Friendship             | Ribbon | Visit Tavern, Shield duel wins, Events         | Calling-in-favors options, bringing allies to Events       |
+
+**Passive influence:** Having ≥5 of an asset can change Event outcomes without spending it (e.g., ≥5 Prestige may auto-impress a Professor).
+
+**Spending:** Using Clout in an Event costs 1–3 of that asset (spent = lost).
 
 ### Daily Gameplay Loop
 
 ```
 1. MORNING: Student chooses one Activity for the day
 2. DAYTIME: Event occurs based on Activity + randomness
-3. EVENING: Event resolves → Resources gained/lost
+3. EVENING: Event resolves → Humours and Clout gained/lost
 4. NIGHT: Duel with rival student
 5. REPEAT: Next day begins
 ```
 
 ### Activities (Daily Choices)
 
-| Activity         | Risk   | Potential Rewards            |
-|------------------|--------|------------------------------|
-| Attend Lectures  | Low    | Air, Earth                   |
-| Study in Library | Low    | Air, small Muse              |
-| Explore Grounds  | Medium | Earth, Fire, random events   |
-| Visit Tavern     | Medium | Fire, social events          |
-| Practice Magic   | High   | Muse, Air, or disasters      |
-| Scheme & Plot    | High   | Muse, Fire, or trouble       |
+| Activity         | Risk   | Humour Rewards         | Clout Rewards                    |
+|------------------|--------|------------------------|----------------------------------|
+| Attend Lectures  | Low    | Air, Earth             | +Prestige                        |
+| Study in Library | Low    | Air, small Muse        | —                                |
+| Explore Grounds  | Medium | Earth, Fire            | +Contraband (chance)             |
+| Visit Tavern     | Medium | Fire                   | +Friendship                      |
+| Practice Magic   | High   | Muse, Air, or disaster | —                                |
+| Scheme & Plot    | High   | Muse, Fire, or trouble | +Compromising Materials (chance) |
 
 ### Event System
 
 Events are text-based scenarios with outcomes. Each event:
 - Has narrative flavor text
 - Presents 1-3 choices (or auto-resolves)
-- Results in resource changes (+/-)
+- Results in Humour and/or Clout changes (+/-)
 - May affect next day or duel
+- Clout (Assets) can unlock additional choices or auto-resolve checks when held in sufficient quantity (≥5)
+- Spending Clout costs 1–3 of that asset; passive Clout thresholds do not consume the asset
 
 Event tone: Comedic, absurdist, Pratchett-inspired.
 
@@ -157,16 +181,19 @@ End-of-day magical duel using rock-paper-scissors core:
 | Shield   | Fireball | Illusion |
 | Illusion | Shield   | Fireball |
 
-**Resource Modifiers:**
+**Humour Modifiers:**
 - Fire: +1 to Fireball power per 10 Fire tokens
 - Air: +1 to Illusion power per 10 Air tokens
 - Earth: +1 to Shield power per 10 Earth tokens
 - Muse: Can change spell after seeing opponent (costs 5 Muse)
 
-**Duel Outcome:**
-- Win: Gain tokens from opponent (type depends on spell used)
-- Lose: Lose tokens to opponent
-- Draw: Both lose small Muse (creative exhaustion)
+**Duel Rewards (Clout):**
+- Win: +2 Prestige always; + spell-type Asset:
+  - Fireball win → +1 Contraband (looted or seized)
+  - Shield win → +1 Friendship (earned respect)
+  - Illusion win → +1 Compromising Materials (you know their weaknesses)
+- Lose: −1 Prestige (reputation suffers)
+- Draw: Both lose 1 Muse Humour (creative exhaustion); no Clout change
 
 ---
 
@@ -236,9 +263,9 @@ B) [Action] - [Hint at risk/reward]
 C) [Action] - [Hint at risk/reward]
 
 OUTCOMES:
-- Success: [Narrative + resource changes]
-- Failure: [Narrative + resource changes]
-- Special: [Rare outcome if applicable]
+- Success: [Narrative + Humour changes + Clout changes]
+- Failure: [Narrative + Humour changes + Clout changes]
+- Special Clout option: [Requires X Clout, costs Y, result]
 ```
 
 ### Example Event
@@ -249,16 +276,18 @@ TITLE: The Librarian's Displeasure
 SETUP: You accidentally shelve a book upside-down. The Librarian—who
 is, as tradition demands, an orangutan—has noticed.
 
-FLAVOR: Library fines at Unseen University are measured in decades.
+FLAVOR: Library fines at Invisible University are measured in decades.
 
 CHOICES:
 A) Apologize profusely - Safe but undignified
 B) Blame a ghost - Risky but creative
 C) Run - You can try
+D) [Requires ≥5 Prestige] Cite academic precedent - Costs 2 Prestige
 
 OUTCOMES:
-- A Success: -1 Star (dignity), but no further consequences
-- B Success: +2 Stars (audacity), Librarian amused
-- B Failure: -5 Gold (fine), -2 Stars, banned for 3 days
-- C: -3 Stars, -10 Gold, but you escape with a rare scroll
+- A Success: -1 Prestige (dignity), but no further consequences
+- B Success: +2 Compromising Materials (you now know the Librarian's filing secrets), Librarian amused
+- B Failure: -2 Prestige (fine and shame), banned for 3 days
+- C: -1 Prestige, but you escape with a rare scroll (+3 Air)
+- D: Costs 2 Prestige; Librarian is silenced; no further consequences
 ```
